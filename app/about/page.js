@@ -1,5 +1,5 @@
 import Image from "next/image";
-import profilePic from "../../public/profile.jpg"; // Replace with your image!
+// import profilePic from "../../public/profile.jpg"; // Replace with your image!
 
 export default function About() {
   return (
@@ -8,10 +8,10 @@ export default function About() {
 
       <div className="flex flex-col md:flex-row items-center gap-8">
         <Image
-          src={profilePic}
+          src="https://placehold.co/200x200/F0F0F0/000000?text=Profile"
           width={200}
           height={200}
-          alt="Photo of Aaron Fields"
+          alt="Photo of Aaron Fields (Placeholder)"
           className="rounded-xl shadow-lg object-cover"
         />
 

@@ -22,6 +22,13 @@ export default function Projects() {
       image: "https://placehold.co/600x400/fce7f3/9f1239?text=Weather+App",
       technologies: ["JavaScript", "API Integration", "CSS3", "Chart.js"],
       status: "Completed"
+    },
+    {
+      title: "Classic Waffles",
+      description: "A delicious recipe for classic waffles, perfect for a cozy breakfast or brunch. This project showcases a simple static page with image integration.",
+      image: "/Classic-Waffles-Recipe-4.jpg",
+      technologies: ["HTML", "CSS"],
+      status: "Completed"
     }
   ]
 
@@ -36,59 +43,33 @@ export default function Projects() {
 
       <div className="projects-wrapper">
         <div className="project-grid">
-          {/* Project Card 1 */}
-          <div className="project-card">
-            <div className="project-media">
-              <span className="project-media-text">Project Image Here</span>
-              <span className="featured-badge">Featured</span>
-            </div>
-            <div className="project-body">
-              <h3 className="project-title">Beyond The Code</h3>
-              <p className="project-desc">
-                Welcome to Beyond The Code, a modern web application designed to help individuals, particularly those without traditional college degrees, find opportunities in the tech industry. It features a job search platform and an integrated AI assistant to help with career-related questions.
-              </p>
-              <div className="project-tags">
-                <span className="tech-badge">React19</span>
-                <span className="tech-badge">Tailwind CSS</span>
-                <span className="tech-badge">HTML</span>
-
+          {projects.map((project, index) => (
+            <div className="project-card" key={index}>
+              <div className="project-media">
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  width={600}
+                  height={400}
+                  className="object-cover rounded-t-lg"
+                />
+                {project.status === "Featured" && (
+                  <span className="featured-badge">Featured</span>
+                )}
+              </div>
+              <div className="project-body">
+                <h3 className="project-title">{project.title}</h3>
+                <p className="project-desc">{project.description}</p>
+                <div className="project-tags">
+                  {project.technologies.map((tech, techIndex) => (
+                    <span className="tech-badge" key={techIndex}>
+                      {tech}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
-
-          {/* Project Card 2 */}
-          <div className="project-card">
-            <div className="project-media">
-              <span className="project-media-text">Project Image Here</span>
-            </div>
-            <div className="project-body">
-              <h3 className="project-title">Project Title</h3>
-              <p className="project-desc">
-                Write a brief description of your project here.
-              </p>
-              <div className="project-tags">
-                <span className="tech-badge">Tech 1</span>
-                <span className="tech-badge">Tech 2</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Project Card 3 */}
-          <div className="project-card">
-            <div className="project-media">
-              <span className="project-media-text">Project Image Here</span>
-            </div>
-            <div className="project-body">
-              <h3 className="project-title">Project Title</h3>
-              <p className="project-desc">
-                Write a brief description of your project here.
-              </p>
-              <div className="project-tags">
-                <span className="tech-badge">Tech 1</span>
-                <span className="tech-badge">Tech 2</span>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
 
         <div className="project-ideas">
