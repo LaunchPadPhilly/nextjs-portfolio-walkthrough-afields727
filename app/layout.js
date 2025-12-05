@@ -1,4 +1,13 @@
 import './globals.css'
+import './about/dashboard.css'
+import './projects/dashboard.css'
+import './contact/dashboard.css'
+import PixelBackground from './components/PixelBackground'
+import Navbar from './components/Navbar'
+import Footer from './components/Footer'
+import { Inter } from 'next/font/google'
+
+const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'My Portfolio',
@@ -8,14 +17,15 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="bg-gray-50">
-        {/* TODO: Import and add your Navbar component here */}
-        
-        <main className="flex-grow">
+      <body className={`${inter.className} min-h-screen flex flex-col relative`}>
+        <PixelBackground />
+        <Navbar />
+
+        <main className="grow pt-16 relative z-1">
           {children}
         </main>
-        
-        {/* TODO: Import and add your Footer component here */}
+
+        <Footer />
       </body>
     </html>
   )

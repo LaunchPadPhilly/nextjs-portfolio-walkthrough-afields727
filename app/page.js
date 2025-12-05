@@ -1,33 +1,45 @@
+import Link from 'next/link'
+import Image from 'next/image'
+
 export default function Home() {
+  const title = "Welcome To Syriana's Portfolio"
+
   return (
-    <div className="min-h-screen flex items-center justify-center p-8">
-      <div className="max-w-4xl text-center">
-        <h1 className="text-6xl font-bold mb-6 text-gray-900">
-          Welcome to My Portfolio
-        </h1>
-        
-        <p className="text-xl text-gray-600 mb-8">
-          This is your homepage starter template. Customize this page to introduce yourself!
-        </p>
-
-        <div className="bg-blue-50 border-2 border-blue-200 rounded-lg p-6 text-left">
-          <h2 className="text-2xl font-bold mb-4 text-blue-900">
-            📝 TODO: Customize Your Homepage
-          </h2>
-          <ul className="space-y-2 text-blue-800">
-            <li>✏️ Change the heading to include your name</li>
-            <li>✏️ Write a brief introduction about yourself</li>
-            <li>✏️ Add navigation links to your other pages</li>
-            <li>✏️ Choose your own color scheme</li>
-            <li>✏️ Make it responsive for mobile devices</li>
-          </ul>
+    <div className="min-h-screen px-6 py-16">
+      <section className="cy-hero">
+        <div className="max-w-5xl mx-auto">
+        <h1 className="cy-title" data-text={title}>{title}</h1>
+        <p className="cy-tagline mt-2">Building beautiful, performant web applications</p>
+        <div className="mt-10 flex flex-col sm:flex-row gap-5 justify-center">
+          <Link href="/projects" className="cy-link-btn">View My Work!</Link>
+          <Link href="/about" className="cy-link-btn">Learn About Me!</Link>
+          <Link href="/contact" className="cy-link-btn">Contact Me!</Link>
         </div>
-
-        <div className="mt-8 p-4 bg-yellow-50 border-2 border-yellow-200 rounded-lg">
-          <p className="text-yellow-900 font-semibold">
-            💡 Tip: Check the README.md for detailed instructions and examples!
-          </p>
         </div>
+      </section>
+
+      <div className="cy-divider" />
+
+      {/* Profile Photo Section */}
+      <section className="home-photo-section">
+        <div className="profile-photo-container">
+          <Image
+            src="/profile-placeholder.png"
+            alt="Syriana profile photo"
+            width={300}
+            height={300}
+            className="profile-photo-image"
+            priority
+          />
+          <p className="profile-photo-hint">Add a real profile photo named <code>profile-placeholder.png</code> in <code>public/</code>.</p>
+        </div>
+      </section>
+
+      <div className="cy-divider" />
+
+      <div className="text-center mt-10">
+        <Link href="#next" aria-label="Scroll down" className="text-3xl text-purple-400 hover:text-purple-300 animate-bounce">↓</Link>
+        <div id="next" className="sr-only">Next section anchor</div>
       </div>
     </div>
   )
