@@ -14,11 +14,11 @@ export default function About() {
 
       <div className="about-wrapper">
         <div className="profile-card">
-          <div style={{ padding: '30px 25px' }}>
+          <div style={{ padding: "30px 25px" }}>
             <p className="bio-text">
-              Hi, I'm <strong>Syriana</strong>, a software developer combining code, creativity, and UX. I'm currently focused on learning Next.js, Tailwind CSS, and building accessible, performant interfaces.
+              Hi, I&apos;m <strong>Alex Fields</strong>. I&apos;m <strong>Syriana</strong>, a software developer combining code, creativity, and UX. I&apos;m currently focused on learning Next.js, Tailwind CSS, and building accessible, performant interfaces.
             </p>
-            <p className="goal-text" style={{ marginTop: '20px' }}>
+            <p className="goal-text" style={{ marginTop: "20px" }}>
               My goal is to keep growing—because the sky is not the limit. I want to refine best practices, deepen architectural thinking, and build a portfolio that reflects craftsmanship and curiosity.
             </p>
           </div>

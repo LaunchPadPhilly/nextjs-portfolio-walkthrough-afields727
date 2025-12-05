@@ -13,7 +13,7 @@ export default function Contact() {
       <div className="contact-wrapper">
         <div className="contact-card">
           <p className="contact-text">
-            I'd love to hear from you! Feel free to reach out through any of these channels.
+            I&apos;m always open to new opportunities, so please don&apost hesitate to get in touch. Whether it&aposs about collaboration, job inquiries, or just general conversation, I&apod love to hear from you! Feel free to reach out through any of these channels.
           </p>
 
           <div className="contact-list">
