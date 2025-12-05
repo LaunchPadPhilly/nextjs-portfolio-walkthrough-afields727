@@ -1,29 +1,38 @@
+// About page - bio, goals, and skills
+
 export default function About() {
+  const skills = ['JavaScript','React','Tailwind CSS','HTML','Next.js', 'Prompt Engineering', 'AI', 'Project Management']
+
   return (
-    <div className="min-h-screen p-8">
-      <div className="max-w-4xl mx-auto">
-        <h1 className="text-5xl font-bold mb-8">About Me</h1>
-        
-        <div className="bg-white rounded-lg shadow-lg p-8 mb-8">
-          <h2 className="text-3xl font-bold mb-4">TODO: Add Your Profile</h2>
-          <div className="space-y-4 text-gray-600">
-            <p>✏️ Add a profile photo using the next/image component</p>
-            <p>✏️ Write a paragraph about who you are</p>
-            <p>✏️ List your skills or interests</p>
-            <p>✏️ Share your goals or what you're learning</p>
+    <div className="about-page">
+      <div className="about-title">
+        <h1>About Me!</h1>
+        <p>Learn more about my journey and skills</p>
+      </div>
+
+      <div className="about-divider"></div>
+
+      <div className="about-wrapper">
+        <div className="profile-card">
+          <div style={{ padding: '30px 25px' }}>
+            <p className="bio-text">
+              Hi, I'm <strong>Syriana</strong>, a software developer combining code, creativity, and UX. I'm currently focused on learning Next.js, Tailwind CSS, and building accessible, performant interfaces.
+            </p>
+            <p className="goal-text" style={{ marginTop: '20px' }}>
+              My goal is to keep growing—because the sky is not the limit. I want to refine best practices, deepen architectural thinking, and build a portfolio that reflects craftsmanship and curiosity.
+            </p>
           </div>
         </div>
+      </div>
 
-        <div className="bg-blue-50 border-2 border-blue-200 rounded-lg p-6">
-          <h3 className="font-bold text-blue-900 mb-2">💡 Example Structure:</h3>
-          <ul className="text-blue-800 space-y-1">
-            <li>• Profile photo (circular, 300x300px)</li>
-            <li>• Bio paragraph (3-5 sentences)</li>
-            <li>• Skills section with badges</li>
-            <li>• Education or experience timeline</li>
-          </ul>
+      <div className="skills-section">
+        <h2 className="skills-heading">Core Skills</h2>
+        <div className="skills-badges">
+          {skills.map(skill => (
+            <span key={skill} className="skill-badge">{skill}</span>
+          ))}
         </div>
       </div>
-    </div>
+    
   )
 }
