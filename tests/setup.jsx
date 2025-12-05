@@ -8,6 +8,7 @@ afterEach(() => {
 })
 
 // Mock Next.js Image component
+// eslint-disable-next-line @next/next/no-img-element
 vi.mock('next/image', () => ({
   default: (props) => {
     // eslint-disable-next-line jsx-a11y/alt-text

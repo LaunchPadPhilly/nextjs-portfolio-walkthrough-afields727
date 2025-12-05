@@ -1,38 +1,26 @@
-// About page - bio, goals, and skills
+import Image from "next/image";
+import profilePic from "../../public/profile.jpg"; // Replace with your image!
 
 export default function About() {
-  const skills = ['JavaScript','React','Tailwind CSS','HTML','Next.js', 'Prompt Engineering', 'AI', 'Project Management']
-
   return (
-    <div className="about-page">
-      <div className="about-title">
-        <h1>About Me!</h1>
-        <p>Learn more about my journey and skills</p>
-      </div>
+    <div>
+      <h1 className="text-5xl font-bold mb-6">About Me</h1>
 
-      <div className="about-divider"></div>
+      <div className="flex flex-col md:flex-row items-center gap-8">
+        <Image
+          src={profilePic}
+          width={200}
+          height={200}
+          alt="Photo of Aaron Fields"
+          className="rounded-xl shadow-lg object-cover"
+        />
 
-      <div className="about-wrapper">
-        <div className="profile-card">
-          <div style={{ padding: "30px 25px" }}>
-            <p className="bio-text">
-              Hi, I&apos;m <strong>Alex Fields</strong>. I&apos;m <strong>Syriana</strong>, a software developer combining code, creativity, and UX. I&apos;m currently focused on learning Next.js, Tailwind CSS, and building accessible, performant interfaces.
-            </p>
-            <p className="goal-text" style={{ marginTop: "20px" }}>
-              My goal is to keep growing—because the sky is not the limit. I want to refine best practices, deepen architectural thinking, and build a portfolio that reflects craftsmanship and curiosity.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div className="skills-section">
-        <h2 className="skills-heading">Core Skills</h2>
-        <div className="skills-badges">
-          {skills.map(skill => (
-            <span key={skill} className="skill-badge">{skill}</span>
-          ))}
-        </div>
+        <p className="text-lg leading-relaxed">
+          Hey! I&apos;m <strong>Aaron Fields</strong>, a passionate developer focused on
+          web technologies such as JavaScript, React, and Next.js. I enjoy solving
+          problems and creating projects that help people and look great.
+        </p>
       </div>
     </div>
-  )
+  );
 }

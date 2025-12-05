@@ -1,32 +1,22 @@
-import './globals.css'
-import './about/dashboard.css'
-import './projects/dashboard.css'
-import './contact/dashboard.css'
-import PixelBackground from './components/PixelBackground'
-import Navbar from './components/Navbar'
-import Footer from './components/Footer'
-import { Inter } from 'next/font/google'
-
-const inter = Inter({ subsets: ['latin'] })
+import "./globals.css";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 export const metadata = {
-  title: 'My Portfolio',
-  description: 'A Next.js portfolio website showcasing my projects and skills',
-}
+  title: "Aaron Fields | Portfolio",
+  description: "Personal portfolio for Aaron Fields",
+};
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} min-h-screen flex flex-col relative`}>
-        <PixelBackground />
+      <body className="bg-gray-50 text-gray-900">
         <Navbar />
-
-        <main className="grow pt-16 relative z-1">
+        <main className="min-h-screen px-6 py-10 max-w-4xl mx-auto">
           {children}
         </main>
-
         <Footer />
       </body>
     </html>
-  )
+  );
 }
